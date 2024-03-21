@@ -1,8 +1,22 @@
 const express = require('express');
 const {google} = require('googleapis');
+require('dotenv').config();
 
-const keys = require('./secret.json');
-const spreadSheetId = '1yqnWcwXXBqSCWG8yigon8B3UY2KnmgY0xWouoF-zLrw';
+const keys = {
+    type: process.env.TYPE,
+    project_id: process.env.PROJECT_ID,
+    private_key_id: process.env.PRIVATE_KEY_ID,
+    private_key: process.env.PRIVATE_KEY,
+    client_email: process.env.CLIENT_EMAIL,
+    client_id: process.env.CLIENT_ID,
+    auth_uri: process.env.AUTH_URI,
+    token_uri: process.env.TOKEN_URI,
+    auth_provider_x509_cert_url: process.env.AUTH_PROVIDER,
+    client_x509_cert_url: process.env.CLIENT,
+    universe_domain: process.env.UNIVERSE_DOMAIN,
+};
+
+const spreadSheetId = process.env.SHEET_ID;
 
 const client = new google.auth.JWT(keys.client_email, null, keys.private_key, [
     'https://www.googleapis.com/auth/spreadsheets',
@@ -21,7 +35,7 @@ const app = express();
 const port = 3001;
 
 app.get('/', (req, res) => {
-    res.send('Hello World!1');
+    res.send('Hello World!');
 });
 
 app.listen(port, () => {

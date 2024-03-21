@@ -1,16 +1,18 @@
 {
-  "name": "restapifolder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.19.1",
-    "googleapis": "^134.0.0"
-  }
+    "name": "restapifolder",
+    "version": "1.0.0",
+    "description": "restAPI to access my google sheet to a vue app",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "cedric florentin",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "express": "^4.19.1",
+        "googleapis": "^134.0.0"
+    }
 }
